@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="32">
+    <author>TyKonKet</author>
+    <version>1.0.0</version>
+    <title>
+        <en>Combine Signals</en>
+    </title>
+    <description>
+        <en>Combine Signals</en>
+    </description>
+    <iconFilename>icon.dds</iconFilename>
+    <multiplayer supported="true" />
+    <extraSourceFiles>
+        <sourceFile filename="combineSignals.lua" />
+    </extraSourceFiles>
+</modDesc>
