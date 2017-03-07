@@ -12,5 +12,6 @@
     <multiplayer supported="true" />
     <extraSourceFiles>
         <sourceFile filename="combineSignals.lua" />
+        <sourceFile filename="combineExtensions.lua" />
     </extraSourceFiles>
 </modDesc>

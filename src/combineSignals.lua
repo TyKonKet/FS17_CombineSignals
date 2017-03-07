@@ -5,7 +5,8 @@
 -- @date 07/03/17
 CombineSignals = {};
 CombineSignals.name = "CombineSignals";
-CombineSignals.debug = true;
+CombineSignals.debug = false;
+CombineSignals.dir = g_currentModDirectory;
 
 function CombineSignals:print(txt1, txt2, txt3, txt4, txt5, txt6, txt7, txt8, txt9)
     if self.debug then
@@ -21,6 +22,9 @@ end
 function CombineSignals:initialize(missionInfo, missionDynamicInfo, loadingScreen)
     self = CombineSignals;
     self:print("initialize()");
+    Combine.update = Utils.appendedFunction(Combine.update, CombineExtensions.update);
+    Combine.postLoad = Utils.appendedFunction(Combine.postLoad, CombineExtensions.postLoad);
+    Combine.delete = Utils.appendedFunction(Combine.delete, CombineExtensions.delete);
 end
 g_mpLoadingScreen.loadFunction = Utils.prependedFunction(g_mpLoadingScreen.loadFunction, CombineSignals.initialize);
 
