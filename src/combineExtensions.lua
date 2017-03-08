@@ -6,6 +6,7 @@
 CombineExtensions = {};
 
 function CombineExtensions:update(dt)
+    self.beaconLightsOffDCB:update(dt);
     if self:getIsActive() then
         local fillLevel = self:getUnitFillLevel(self.overloading.fillUnitIndex);
         local capacity = self:getUnitCapacity(self.overloading.fillUnitIndex);
@@ -21,7 +22,8 @@ function CombineExtensions:update(dt)
         end
         if fillLevel >= (0.50 * capacity) and not self.beaconLightsFL50 then
             self.beaconLightsFL50 = true;
-            print("Lampeggio -> " .. self.beaconLightsSpeed * 2);
+            self:setBeaconLightsVisibility(true, false);
+            self.beaconLightsOffDCB:call(2000);
             if self.isEntered then
                 playSample(self.signalSample, 1, 1.2, 0);
             end
@@ -30,7 +32,8 @@ function CombineExtensions:update(dt)
         end
         if fillLevel >= (0.25 * capacity) and not self.beaconLightsFL25 then
             self.beaconLightsFL25 = true;
-            print("Lampeggio -> " .. self.beaconLightsSpeed * 1);
+            self:setBeaconLightsVisibility(true, false);
+            self.beaconLightsOffDCB:call(1000);
             if self.isEntered then
                 playSample(self.signalSample, 1, 1.2, 0);
             end
@@ -60,6 +63,7 @@ function CombineExtensions:postLoad(savegame)
     if fillLevel >= (0.50 * capacity) and not self.beaconLightsFL50 then
         self.beaconLightsFL50 = true;
     end
+    self.beaconLightsOffDCB = DelayedCallBack:new(function(self)self:setBeaconLightsVisibility(false, false); end, self);
 end
 
 function CombineExtensions:delete()
