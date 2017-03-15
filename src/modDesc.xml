@@ -1,37 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="37">
-    <author>TyKonKet</author>
-    <version>1.0.1-rc2</version>
+    <author>TyKonKet (Team FSI Modding)</author>
+    <version>1.0.1</version>
     <title>
         <en>Combine Signals</en>
     </title>
     <description>
         <en>
             <![CDATA[Emulates the real behaviour of combine signals related to fill level, with or without helper.
-25% -> acoustic signal and short blink
-50% -> acoustic signal and blink
-75% -> acoustic signal and blink until full fill level
+
+-25% acoustic signal and short blink.
+-50% acoustic signal and blink.
+-75% acoustic signal and blink until full fill level.
 ]]>
         </en>
         <de>
             <![CDATA[Emuliert das echte Verhalten von kombinierten Signalen im Zusammenhang mit Füllstand, mit oder ohne Helfer.
-25% -> akustisches Signal und kurzes Blinken
-50% -> akustisches Signal und blinkt
-75% -> akustisches Signal und blinkt bis zum vollen Füllstand
+
+-25% akustisches Signal und kurzes Blinken.
+-50% akustisches Signal und blinkt.
+-75% akustisches Signal und blinkt bis zum vollen Füllstand.
 ]]>
         </de>
         <fr>
             <![CDATA[Emule le comportement réel des signaux combinés liés au niveau de remplissage, avec ou sans assistance.
-25% -> signal acoustique et clignotement court
-50% -> signal acoustique et clignotement
-75% -> signal acoustique et clignotent jusqu'au niveau de remplissage complet
+
+-25% signal acoustique et clignotement court.
+-50% signal acoustique et clignotement.
+-75% signal acoustique et clignotent jusqu'au niveau de remplissage complet.
 ]]>
         </fr>
         <it>
             <![CDATA[Simula il reale comportamento dei segnali relativi al livello di riempimento delle mietitrebbie, con o senza l'aiutante.
-25% -> segnale acustico e breve lampeggio
-50% -> segnale acustico e lempeggio
-75% -> segnale acustico e lampegio fino al completo riempimento
+
+-25% segnale acustico e breve lampeggio.
+-50% segnale acustico e lempeggio.
+-75% segnale acustico e lampegio fino al completo riempimento.
 ]]>
         </it>
     </description>
@@ -44,4 +48,10 @@
         <sourceFile filename="extensions/AIDriveStrategyCombineExtensions.lua" />
         <sourceFile filename="extensions/CombineExtensions.lua" />
     </extraSourceFiles>
+    <translatedBy>
+        <en>TyKonKet</en>
+        <it>TyKonKet</it>
+        <de>TyKonKet</de>
+        <fr>TyKonKet</fr>
+    </translatedBy>
 </modDesc>
