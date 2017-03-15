@@ -1,0 +1,22 @@
+--function Utils.appendedFunction(oldFunc, newFunc)
+--    if oldFunc ~= nil then
+--        return function(...)
+--            local rt = oldFunc(...); 
+--            newFunc(...);
+--            return unpack(rt);
+--        end
+--    else
+--        return newFunc;
+--    end
+--end
+--
+--function Utils.prependedFunction(oldFunc, newFunc)
+--    if oldFunc ~= nil then
+--        return function(...)
+--            newFunc(...);
+--            return unpack(oldFunc(...));
+--        end
+--    else
+--        return newFunc;
+--    end
+--end
