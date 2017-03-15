@@ -22,7 +22,7 @@ function CombineExtensions:update(dt)
             if fillLevel >= (0.50 * capacity) and not self.beaconLightsFL50 then
                 self.beaconLightsFL50 = true;
                 self:setBeaconLightsVisibility(true, false);
-                self.beaconLightsOffDCB:call(2500);
+                self.beaconLightsOffDCB:call(3000);
                 CombineExtensions.playSample(self);
             elseif fillLevel <= (0.50 * capacity) and self.beaconLightsFL50 then
                 self.beaconLightsFL50 = false;
@@ -50,7 +50,7 @@ function CombineExtensions:postLoad(savegame)
     if capacity <= 0 then
         self.combineExtensionsAtive = false;
     else
-        local fillLevel = self:getUnitFillLevel(self.overloading.fillUnitIndex);      
+        local fillLevel = self:getUnitFillLevel(self.overloading.fillUnitIndex);
         if fillLevel >= (0.25 * capacity) and not self.beaconLightsFL25 then
             self.beaconLightsFL25 = true;
         end

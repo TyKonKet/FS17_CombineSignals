@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="36">
     <author>TyKonKet</author>
-    <version>1.0.0-rc1</version>
+    <version>1.0.1-rc2</version>
     <title>
         <en>Combine Signals</en>
     </title>
@@ -11,7 +11,6 @@
     <iconFilename>icon.dds</iconFilename>
     <multiplayer supported="true" />
     <extraSourceFiles>
-        <sourceFile filename="helpers/utils.lua" />
         <sourceFile filename="helpers/delayedCallBack.lua" />
         <sourceFile filename="combineSignals.lua" />
         <sourceFile filename="extensions/LightsExtensions.lua" />
