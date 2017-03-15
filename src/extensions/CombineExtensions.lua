@@ -63,6 +63,7 @@ end
 function CombineExtensions:delete()
     if CombineExtensions.signalSample ~= nil then
         delete(CombineExtensions.signalSample);
+        CombineExtensions.signalSample = nil;
     end
 end
 
