@@ -13,6 +13,8 @@
     <extraSourceFiles>
         <sourceFile filename="helpers/delayedCallBack.lua" />
         <sourceFile filename="combineSignals.lua" />
-        <sourceFile filename="combineExtensions.lua" />
+        <sourceFile filename="extensions/LightsExtensions.lua" />
+        <sourceFile filename="extensions/AIDriveStrategyCombineExtensions.lua" />
+        <sourceFile filename="extensions/CombineExtensions.lua" />
     </extraSourceFiles>
 </modDesc>

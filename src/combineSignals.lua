@@ -25,6 +25,9 @@ function CombineSignals:initialize(missionInfo, missionDynamicInfo, loadingScree
     Combine.update = Utils.appendedFunction(Combine.update, CombineExtensions.update);
     Combine.postLoad = Utils.appendedFunction(Combine.postLoad, CombineExtensions.postLoad);
     Combine.delete = Utils.appendedFunction(Combine.delete, CombineExtensions.delete);
+    AIDriveStrategyCombine.getDriveData = Utils.appendedFunction(AIDriveStrategyCombine.getDriveData, AIDriveStrategyCombineExtensions.postGetDriveData);
+    AIDriveStrategyCombine.getDriveData = Utils.prependedFunction(AIDriveStrategyCombine.getDriveData, AIDriveStrategyCombineExtensions.preGetDriveData);
+    Lights.setBeaconLightsVisibility = LightsExtensions.setBeaconLightsVisibility;
 end
 g_mpLoadingScreen.loadFunction = Utils.prependedFunction(g_mpLoadingScreen.loadFunction, CombineSignals.initialize);
 
