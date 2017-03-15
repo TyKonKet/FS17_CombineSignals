@@ -6,50 +6,58 @@
 CombineExtensions = {};
 
 function CombineExtensions:update(dt)
-    self.beaconLightsOffDCB:update(dt);
-    if self:getIsActive() then
-        local fillLevel = self:getUnitFillLevel(self.overloading.fillUnitIndex);
-        local capacity = self:getUnitCapacity(self.overloading.fillUnitIndex);
-        if fillLevel >= (0.75 * capacity) and not self.beaconLightsFL75 then
-            self.beaconLightsFL75 = true;
-            self:setBeaconLightsVisibility(true, false);
-            CombineExtensions.playSample(self);
-        elseif fillLevel <= (0.75 * capacity) and self.beaconLightsFL75 then
-            self:setBeaconLightsVisibility(false, false);
-            self.beaconLightsFL75 = false;
-        end
-        if fillLevel >= (0.50 * capacity) and not self.beaconLightsFL50 then
-            self.beaconLightsFL50 = true;
-            self:setBeaconLightsVisibility(true, false);
-            self.beaconLightsOffDCB:call(2000);
-            CombineExtensions.playSample(self);
-        elseif fillLevel <= (0.50 * capacity) and self.beaconLightsFL50 then
-            self.beaconLightsFL50 = false;
-        end
-        if fillLevel >= (0.25 * capacity) and not self.beaconLightsFL25 then
-            self.beaconLightsFL25 = true;
-            self:setBeaconLightsVisibility(true, false);
-            self.beaconLightsOffDCB:call(1000);
-            CombineExtensions.playSample(self);
-        elseif fillLevel <= (0.25 * capacity) and self.beaconLightsFL25 then
-            self.beaconLightsFL25 = false;
+    if self.combineExtensionsAtive then
+        self.beaconLightsOffDCB:update(dt);
+        if self:getIsActive() then
+            local fillLevel = self:getUnitFillLevel(self.overloading.fillUnitIndex);
+            local capacity = self:getUnitCapacity(self.overloading.fillUnitIndex);
+            if fillLevel >= (0.75 * capacity) and not self.beaconLightsFL75 then
+                self.beaconLightsFL75 = true;
+                self:setBeaconLightsVisibility(true, false);
+                CombineExtensions.playSample(self);
+            elseif fillLevel <= (0.75 * capacity) and self.beaconLightsFL75 then
+                self:setBeaconLightsVisibility(false, false);
+                self.beaconLightsFL75 = false;
+            end
+            if fillLevel >= (0.50 * capacity) and not self.beaconLightsFL50 then
+                self.beaconLightsFL50 = true;
+                self:setBeaconLightsVisibility(true, false);
+                self.beaconLightsOffDCB:call(2000);
+                CombineExtensions.playSample(self);
+            elseif fillLevel <= (0.50 * capacity) and self.beaconLightsFL50 then
+                self.beaconLightsFL50 = false;
+            end
+            if fillLevel >= (0.25 * capacity) and not self.beaconLightsFL25 then
+                self.beaconLightsFL25 = true;
+                self:setBeaconLightsVisibility(true, false);
+                self.beaconLightsOffDCB:call(1000);
+                CombineExtensions.playSample(self);
+            elseif fillLevel <= (0.25 * capacity) and self.beaconLightsFL25 then
+                self.beaconLightsFL25 = false;
+            end
         end
     end
 end
 
 function CombineExtensions:postLoad(savegame)
+    self.combineExtensionsAtive = true;
     CombineExtensions.loadSample();
     self.beaconLightsOffDCB = DelayedCallBack:new(function(self)self:setBeaconLightsVisibility(false, false); end, self);
     for k, _ in pairs(self.beaconLights) do
         self.beaconLights[k].speed = self.beaconLights[k].speed * (math.random(70, 75) / 100);
     end
-    local fillLevel = self:getUnitFillLevel(self.overloading.fillUnitIndex);
     local capacity = self:getUnitCapacity(self.overloading.fillUnitIndex);
-    if fillLevel >= (0.25 * capacity) and not self.beaconLightsFL25 then
-        self.beaconLightsFL25 = true;
-    end
-    if fillLevel >= (0.50 * capacity) and not self.beaconLightsFL50 then
-        self.beaconLightsFL50 = true;
+    if capacity <= 0 then
+        self.combineExtensionsAtive = false;
+    else
+        local fillLevel = self:getUnitFillLevel(self.overloading.fillUnitIndex);
+        
+        if fillLevel >= (0.25 * capacity) and not self.beaconLightsFL25 then
+            self.beaconLightsFL25 = true;
+        end
+        if fillLevel >= (0.50 * capacity) and not self.beaconLightsFL50 then
+            self.beaconLightsFL50 = true;
+        end
     end
 end
 
