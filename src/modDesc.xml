@@ -4,6 +4,7 @@
     <version>1.0.1</version>
     <title>
         <en>Combine Signals</en>
+        <ru>Сигналы комбайна</ru>
     </title>
     <description>
         <en>
@@ -38,6 +39,14 @@
 -75% segnale acustico e lampegio fino al completo riempimento.
 ]]>
         </it>
+        <ru>
+         <![CDATA[Эмулирует реальное поведение сигналов комбинов, связанных с уровнем заполнения, с помощником или без него.
+
+-25% звуковой сигнал и 3 коротких мигания.
+-50% звуковой сигнал и 1 мигание.
+-75% звуковой сигнал и мигание пока бункер полный.
+]]>
+        </ru>
     </description>
     <iconFilename>icon.dds</iconFilename>
     <multiplayer supported="true" />
