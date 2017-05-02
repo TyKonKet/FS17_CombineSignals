@@ -5,6 +5,7 @@
     <title>
         <en>Combine Signals</en>
         <ru>Сигналы комбайна</ru>
+        <nl>Combine Signalen</nl>
     </title>
     <description>
         <en>
@@ -47,6 +48,15 @@
 -75% звуковой сигнал и мигание пока бункер полный.
 ]]>
         </ru>
+        <nl>
+            <![CDATA[Boots het echte gedrag van combinesignalen met betrekking tot vulniveau uit, met of zonder helper.
+
+-25% akoestisch signaal en kort knipperen
+-50% akoestisch signaal en knipperen.
+-75% akoestisch signaal en knipperen tot volledig vol.
+]]>
+        </nl>
+        
     </description>
     <iconFilename>icon.dds</iconFilename>
     <multiplayer supported="true" />
@@ -62,5 +72,6 @@
         <it>TyKonKet</it>
         <de>TyKonKet</de>
         <fr>TyKonKet</fr>
+        <nl>FarmingvidsHD</nl>
     </translatedBy>
 </modDesc>
